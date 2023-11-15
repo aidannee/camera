@@ -82,6 +82,7 @@ const DrawingCanvas = ({ image }) => {
           height={500}
           width={500}
           ref={canvasRef}
+          draggable={false}
           onMouseDown={startDrawing}
           onMouseMove={continueDrawing}
           onMouseUp={stopDrawing}
