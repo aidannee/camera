@@ -75,7 +75,7 @@ const DrawingCanvas = ({ image }) => {
     <>
       {" "}
       {/* PARENT */}
-      <div className="flex flex-col justify-center items-center ">
+      <div className="flex flex-col justify-center items-center overflow-hidden">
         {/* CANVAS */}
         <div className="h-[80%] overflow-hidden">
           {" "}
@@ -87,11 +87,17 @@ const DrawingCanvas = ({ image }) => {
             onMouseMove={continueDrawing}
             onMouseUp={stopDrawing}
             onMouseOut={stopDrawing}
-            onTouchStart={startDrawing} // For touch devices
-            onTouchMove={continueDrawing} // For touch devices
+            onTouchStart={(e) => {
+              e.preventDefault(); // Prevent scrolling
+              startDrawing(e.touches[0]);
+            }}
+            onTouchMove={(e) => {
+              e.preventDefault(); // Prevent scrolling
+              continueDrawing(e.touches[0]);
+            }}
             onTouchEnd={stopDrawing} // For touch devices
-            width={400} // Set canvas width dynamically
-            height={400} // Set canvas height dynamically
+            width={400}
+            height={400}
           />
         </div>
         {/* EDITING BUTTONS */}
