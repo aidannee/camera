@@ -6,7 +6,7 @@ function App() {
     <>
       <div
         draggable="false"
-        className="h-screen w-screen pb-28 md:pb-0 overflow-hidden"
+        className="h-[100vh-7rem] md:h-screen w-screen md:pb-0 overflow-hidden"
       >
         {" "}
         <Profile />
