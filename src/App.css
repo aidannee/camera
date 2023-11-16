@@ -5,3 +5,24 @@
 #imageGallery::-webkit-scrollbar {
   display: none;
 } */
+
+@media screen and (min-width: 768px) {
+  .canvas-lg\:w-80 {
+    width: 80%; /* Adjust this value as needed */
+  }
+
+  .canvas-lg\:h-80 {
+    height: 80%; /* Adjust this value as needed */
+  }
+}
+#imageGallery {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .max-w-xs {
+    max-width: 80vw; /* Adjust this value as needed */
+  }
+}

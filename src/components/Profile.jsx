@@ -98,26 +98,27 @@ function Profile() {
         className="h-[30%] bg-red-500 p-4 overflow-y-hidden overflow-x-scroll"
       >
         <div className="flex space-x-4 h-full">
-          {" "}
           {savedGallery.map((img, index) => {
             return (
-              <div class="min-w-max bg-white rounded-lg shadow-md p-4 object-contain  opacity-50 hover:opacity-100 transform hover:scale-110 transition duration-300 ease-in-out">
+              <div
+                key={index}
+                className="min-w-[150px] md:min-w-[200px] lg:min-w-[250px] bg-white rounded-lg shadow-md p-4 object-contain opacity-50 hover:opacity-100 transform hover:scale-110 transition duration-300 ease-in-out"
+              >
                 <img
                   src={img}
                   alt="Image"
-                  class="h-[80%] object-cover rounded cursor-pointer"
-                  onClick={(e) => drawImage(img, index)}
+                  className="h-[80%] w-full object-cover rounded cursor-pointer"
+                  onClick={() => drawImage(img, index)}
                 />
-                <div className=" h-[20%]  flex justify-between text-lg  ">
-                  <button onClick={(e) => deleteImage(index)}>
-                    <i class="fa-regular fa-trash-can"></i>
+                <div className="h-[20%] flex justify-between items-center text-lg">
+                  <button onClick={() => deleteImage(index)}>
+                    <i className="fa-regular fa-trash-can"></i>
                   </button>
                   <a className="" href={savedGallery[index]} download={index}>
-                    <button className=" ">
-                      <i class="fa-regular fa-circle-down"></i>
+                    <button>
+                      <i className="fa-regular fa-circle-down"></i>
                     </button>
                   </a>
-                  {/* <button className="  bg-yellow-400 m-1 p-1">✏️</button> */}
                 </div>
               </div>
             );
