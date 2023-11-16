@@ -74,28 +74,35 @@ const DrawingCanvas = ({ image }) => {
   return (
     <>
       {" "}
+      {/* PARENT */}
       <div className="flex flex-col justify-center items-center ">
-        {" "}
-        <canvas
-          key={image}
-          className="aspect-auto bg-gray-200 "
-          height={500}
-          width={500}
-          ref={canvasRef}
-          draggable={false}
-          onMouseDown={startDrawing}
-          onMouseMove={continueDrawing}
-          onMouseUp={stopDrawing}
-          onMouseOut={stopDrawing}
-        />
+        {/* CANVAS */}
+        <div className="h-[80%] overflow-hidden">
+          {" "}
+          <canvas
+            className="aspect-auto bg-gray-200"
+            ref={canvasRef}
+            draggable={false}
+            onMouseDown={startDrawing}
+            onMouseMove={continueDrawing}
+            onMouseUp={stopDrawing}
+            onMouseOut={stopDrawing}
+            onTouchStart={startDrawing} // For touch devices
+            onTouchMove={continueDrawing} // For touch devices
+            onTouchEnd={stopDrawing} // For touch devices
+            width={400} // Set canvas width dynamically
+            height={400} // Set canvas height dynamically
+          />
+        </div>
+        {/* EDITING BUTTONS */}
         <div
-          className=" p-1 flex items-center space-x-6 bg-purple-400"
+          className="p-1 h[20%] flex items-center space-x-6 bg-purple-400"
           id="canvasEditorButtons"
         >
           <div className="rounded flex items-center p-1 bg-rose-400">
             <label htmlFor="color">Colour:</label>
             <input
-              className=" bg-transparent"
+              className="bg-transparent"
               type="color"
               id="color"
               value={canvasLineColor}
@@ -105,7 +112,6 @@ const DrawingCanvas = ({ image }) => {
               }}
             />
           </div>
-
           <div className="p-1 bg-blue-400 rounded">
             <label htmlFor="lineWidth">Line width(1-20):</label>
             <input
@@ -122,7 +128,7 @@ const DrawingCanvas = ({ image }) => {
             />
           </div>
           <button
-            className=" p-1 bg-slate-400 rounded"
+            className="p-1 bg-slate-400 rounded"
             onClick={saveCanvasImage}
           >
             Save Image

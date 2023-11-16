@@ -61,7 +61,7 @@ function Profile() {
               {/* CAMERA */}
               {picture === "" ? (
                 <div className="flex justify-center items-center h-[80%]">
-                  <div className="flex flex-col justify-center h-[80%]">
+                  <div className="flex flex-col justify-center ">
                     <Webcam
                       audio={false}
                       ref={webcamRef}
