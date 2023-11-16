@@ -92,7 +92,7 @@ const DrawingCanvas = ({ image }) => {
           className=" p-1 flex items-center space-x-6 bg-purple-400"
           id="canvasEditorButtons"
         >
-          <div className="flex items-center p-1 bg-rose-400">
+          <div className="rounded flex items-center p-1 bg-rose-400">
             <label htmlFor="color">Colour:</label>
             <input
               className=" bg-transparent"
@@ -106,7 +106,7 @@ const DrawingCanvas = ({ image }) => {
             />
           </div>
 
-          <div className="p-1 bg-blue-400">
+          <div className="p-1 bg-blue-400 rounded">
             <label htmlFor="lineWidth">Line width(1-20):</label>
             <input
               id="lineWidth"
@@ -121,7 +121,10 @@ const DrawingCanvas = ({ image }) => {
               className=""
             />
           </div>
-          <button className=" p-1 bg-slate-400 " onClick={saveCanvasImage}>
+          <button
+            className=" p-1 bg-slate-400 rounded"
+            onClick={saveCanvasImage}
+          >
             Save Image
           </button>
         </div>
