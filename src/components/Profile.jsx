@@ -47,15 +47,13 @@ function Profile() {
       <div className="h-[70%] flex items-center justify-center bg-green-500 overflow-y-auto text-center">
         <div className="z-20">
           {isCanvasActive ? (
-            <div className="h-[80%] flex justify-center items-center">
-              <DrawingCanvas
-                setIsCanvasActive={setIsCanvasActive}
-                image={savedGallery[imageIndex]}
-                setSavedGallery={setSavedGallery}
-                savedGallery={savedGallery}
-                imgIdx={imageIndex}
-              />
-            </div>
+            <DrawingCanvas
+              setIsCanvasActive={setIsCanvasActive}
+              image={savedGallery[imageIndex]}
+              setSavedGallery={setSavedGallery}
+              savedGallery={savedGallery}
+              imgIdx={imageIndex}
+            />
           ) : (
             <div className="flex flex-col items-center">
               {/* CAMERA */}
