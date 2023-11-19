@@ -80,7 +80,7 @@ const DrawingCanvas = ({ image }) => {
         <div className="h-[80%] overflow-hidden">
           {" "}
           <canvas
-            className="aspect-auto bg-gray-200"
+            className="aspect-auto  rounded"
             ref={canvasRef}
             draggable={false}
             onMouseDown={startDrawing}
@@ -102,10 +102,10 @@ const DrawingCanvas = ({ image }) => {
         </div>
         {/* EDITING BUTTONS */}
         <div
-          className="p-1 h[20%] flex items-center space-x-6 bg-purple-400"
+          className="py-3 h[20%] flex items-center space-x-6"
           id="canvasEditorButtons"
         >
-          <div className="rounded flex items-center p-1 bg-rose-400">
+          <div className="buttonZ rounded flex items-center p-1 ">
             <label htmlFor="color">Colour:</label>
             <input
               className="bg-transparent"
@@ -118,7 +118,7 @@ const DrawingCanvas = ({ image }) => {
               }}
             />
           </div>
-          <div className="p-1 bg-blue-400 rounded">
+          <div className="buttonZ p-1 rounded">
             <label htmlFor="lineWidth">Line width(1-20):</label>
             <input
               id="lineWidth"
@@ -133,10 +133,7 @@ const DrawingCanvas = ({ image }) => {
               className=""
             />
           </div>
-          <button
-            className="p-1 bg-slate-400 rounded"
-            onClick={saveCanvasImage}
-          >
+          <button className="buttonZ p-1  rounded" onClick={saveCanvasImage}>
             Save Image
           </button>
         </div>

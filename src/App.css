@@ -20,6 +20,15 @@
   white-space: nowrap;
 }
 
+.buttonZ {
+  background-color: #b0a695;
+}
+.buttonZ:focus {
+  background-color: #776b5d;
+}
+.buttonZ:hover {
+  background-color: #776b5d;
+}
 /* Adjustments for smaller screens */
 @media screen and (max-width: 768px) {
   .max-w-xs {

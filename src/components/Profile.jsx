@@ -44,7 +44,10 @@ function Profile() {
   return (
     <div className="flex flex-col h-full w-full">
       {/* DRAWING */}
-      <div className="h-[70%] flex items-center justify-center bg-green-500 overflow-y-auto text-center">
+      <div
+        style={{ backgroundColor: "#F3EEEA" }}
+        className="h-[70%] flex items-center justify-center  overflow-y-auto text-center"
+      >
         <div className="z-20">
           {isCanvasActive ? (
             <DrawingCanvas
@@ -70,7 +73,7 @@ function Profile() {
                     <div className="h-[20%] flex justify-center items-center">
                       <button
                         onClick={capture}
-                        className="bg-red-400 px-8 py-2 m-4 rounded"
+                        className="buttonZ px-8 py-2 m-4 rounded"
                       >
                         Capture
                       </button>
@@ -80,7 +83,7 @@ function Profile() {
               ) : (
                 <button
                   onClick={handleRetake}
-                  className="bg-blue-400 px-4 py-2 m-4 rounded"
+                  className="buttonZ px-4 py-2 m-4 rounded"
                 >
                   Retake
                 </button>
@@ -92,6 +95,7 @@ function Profile() {
 
       {/* GALLERY */}
       <div
+        style={{ backgroundColor: "#EBE3D5" }}
         id="imageGallery"
         className="h-[30%] bg-red-500 p-4 overflow-y-hidden overflow-x-scroll"
       >
