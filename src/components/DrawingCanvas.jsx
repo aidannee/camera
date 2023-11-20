@@ -91,6 +91,7 @@ const DrawingCanvas = ({ image }) => {
               e.stopPropagation();
               e.preventDefault(); // Prevent scrolling
               startDrawing(e.touches[0]);
+              return false;
             }}
             onTouchMove={(e) => {
               e.stopPropagation();
