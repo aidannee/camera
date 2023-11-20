@@ -89,13 +89,13 @@ const DrawingCanvas = ({ image }) => {
             onMouseUp={stopDrawing}
             onMouseOut={stopDrawing}
             onTouchStart={(e) => {
-              e.stopPropagation();
+              // e.stopPropagation();
               e.preventDefault(); // Prevent scrolling
               startDrawing(e.touches[0]);
               return false;
             }}
             onTouchMove={(e) => {
-              e.stopPropagation();
+              // e.stopPropagation();
               e.preventDefault(); // Prevent scrolling
               continueDrawing(e.touches[0]);
             }}
