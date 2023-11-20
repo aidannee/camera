@@ -104,7 +104,7 @@ function Profile() {
             return (
               <div
                 key={index}
-                className="min-w-[150px] md:min-w-[200px] lg:min-w-[250px] bg-white rounded-lg shadow-md p-4 object-contain opacity-50 hover:opacity-100 transform hover:scale-110 transition duration-300 ease-in-out"
+                className="min-w-[150px] max-w-[150px] w-[150px] md:min-w-[200px] md:max-w-[200px] lg:min-w-[250px] bg-white rounded-lg shadow-md p-4 object-contain opacity-50 hover:opacity-100 transform hover:scale-110 transition duration-300 ease-in-out"
               >
                 <img
                   src={img}
