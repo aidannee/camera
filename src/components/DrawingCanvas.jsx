@@ -80,7 +80,8 @@ const DrawingCanvas = ({ image }) => {
         <div className="h-[80%] overflow-hidden">
           {" "}
           <canvas
-            className="aspect-auto  rounded"
+            style={{ touchAction: "none" }}
+            className="aspect-auto rounded"
             ref={canvasRef}
             draggable={false}
             onMouseDown={startDrawing}
