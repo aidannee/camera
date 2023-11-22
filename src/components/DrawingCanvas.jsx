@@ -43,6 +43,7 @@ const DrawingCanvas = ({ image }) => {
   }, [image]);
 
   const startDrawing = (e) => {
+    console.log(e);
     context = canvasRef.current.getContext("2d");
     isDrawing = true;
     context.strokeStyle = canvasLineColor;
@@ -50,14 +51,20 @@ const DrawingCanvas = ({ image }) => {
     console.log(canvasLineColor);
     context.lineWidth = canvasLineWidth;
     context.beginPath();
-    context.moveTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
+    context.moveTo(
+      e.clientX - e.target.offsetLeft,
+      e.clientY - e.target.offsetTop
+    );
   };
   const continueDrawing = (e) => {
     context = canvasRef.current.getContext("2d");
 
     if (!isDrawing) return;
 
-    context.lineTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
+    context.lineTo(
+      e.clientX - e.target.offsetLeft,
+      e.clientY - e.target.offsetTop
+    );
     context.stroke();
   };
   const stopDrawing = () => {
@@ -84,11 +91,16 @@ const DrawingCanvas = ({ image }) => {
             className="aspect-auto rounded"
             ref={canvasRef}
             draggable={false}
-            onMouseDown={startDrawing}
+            onMouseDown={(e) => {
+              console.log("mousedown");
+              startDrawing(e);
+            }}
             onMouseMove={continueDrawing}
             onMouseUp={stopDrawing}
             onMouseOut={stopDrawing}
             onTouchStart={(e) => {
+              console.log("touchstart");
+
               // e.stopPropagation();
               e.preventDefault(); // Prevent scrolling
               startDrawing(e.touches[0]);
